@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Manage Post, Category & Tag</title>
+    
+    <link rel="stylesheet" href="~/Content/jquery-ui-1.9.2.custom.min.css"/>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="~/Scripts/jqgrid/src/css/ui.jqgrid.css"/>
+    <script src="~/Scripts/jqgrid/src/jquery.jqGrid.js"></script>
+
+    <link rel="stylesheet" href="~/Content/themes/simple/admin.css" />
+</head>
+<body>
+<h2>Manage Post, Category & Tag</h2>
+<div id="tabs">
+    <ul>
+        <li><a href="#tab-posts">Posts</a></li>
+        <li><a href="#tab-cats">Categories</a></li>
+        <li><a href="#tab-tags">Tags</a></li>
+    </ul>
+    <div id="tab-posts" class="tab">
+        <table id="tablePosts" class="grid"></table>
+        <div id="pagerPosts" class="pager">
+        </div>
+    </div>
+    <div id="tab-cats" class="tab">
+        <table id="tableCats" class="grid"></table>
+        <div id="pagerCats" class="pager">
+        </div>
+    </div>
+    <div id="tab-tags" class="tab">
+        <table id="tableTags" class="grid"></table>
+        <div id="pagerTags" class="pager">
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>

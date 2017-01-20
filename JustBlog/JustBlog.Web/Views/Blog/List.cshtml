@@ -1,0 +1,10 @@
+﻿@model JustBlog.Web.Models.ListViewModel
+
+<div id="content">
+    <h1>@ViewBag.Title</h1>
+    @foreach (var item in Model.Posts)
+    {
+        @Html.Partial("_PostTemplate",item)
+    }
+        
+</div>

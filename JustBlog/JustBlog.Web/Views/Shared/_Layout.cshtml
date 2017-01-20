@@ -1,0 +1,40 @@
+﻿@using JustBlog.Web.Controllers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/themes/simple/style.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="main">
+    <!--header-->
+    <div id="header">
+        <div id="logo">
+            <div id="logo_text">
+                <h1><a href="/">Just <span class="logo_colour">Posts</span></a>
+                </h1>
+                <h2>Writing, experiment and more...</h2>
+            </div>
+        </div>
+    </div>
+    <div id="menubar">
+        <ul id="menu">
+            <li>@Html.ActionLink("Posts","Posts","Blog")</li>
+            <li>@Html.ActionLink("Contact","Contact","Home")
+            <li>@Html.ActionLink("About","About","Home")</li>
+        </ul>
+    </div>
+    <!--content-->
+    <div id="site_content">
+        @RenderBody()
+    </div>
+    <!--footer-->
+    <div id="footer">
+        Copyright
+    </div>
+</div>
+</body>
+</html>
