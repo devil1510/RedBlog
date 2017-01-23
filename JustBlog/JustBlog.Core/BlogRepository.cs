@@ -32,5 +32,23 @@ namespace JustBlog.Core
         {
              return _blogContext.Posts.Where(p => p.Published == true).Count();
         }
+
+        public Post Post(int id)
+        {
+            var post = _blogContext.Posts.SingleOrDefault(x => x.Id == id);
+            if (post != null)
+            {
+                return new Post()
+                {
+                    Id = post.Id,
+                    ShortDescription = post.ShortDecription,
+                    Title = post.Title,
+                    Description = post.Description,
+                    Modified = post.Modified,
+                    UrlSlug = post.UrlSlug
+                };
+            }
+            return null;
+        }
     }
 }
