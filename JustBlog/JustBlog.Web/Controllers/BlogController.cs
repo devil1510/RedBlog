@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using JustBlog.Core;
 using JustBlog.Web.Models;
+using Post = JustBlog.Core.Objects.Post;
 
 namespace JustBlog.Web.Controllers
 {
@@ -35,6 +36,30 @@ namespace JustBlog.Web.Controllers
             viewModel.Total = _blogRepository.TotalPosts();
             ViewBag.Title = "Latest Posts";
             return View("List", viewModel);
+        }
+
+        [HttpGet]
+        public ViewResult Post(int id)
+        {
+            PostModel model=new PostModel();
+            var post = _blogRepository.Post(id);
+            model = post == null ? null : Mapping(post);
+            return View("Post",model);
+        }
+
+        private  PostModel Mapping(Post post)
+        {
+             PostModel model=new PostModel()
+             {
+                 Id = post.Id,
+                 Title = post.Title,
+                 ShortDescription = post.ShortDescription,
+                 Description = post.Description,
+                 UrlSlug = post.UrlSlug,
+                 Modified = post.Modified,
+                 Published = post.Published
+             };
+            return model;
         }
     }
 }

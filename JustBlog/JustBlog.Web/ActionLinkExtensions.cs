@@ -13,11 +13,9 @@ namespace JustBlog.Web
         public static MvcHtmlString PostLink(this HtmlHelper helper,Post post)
         {
             return helper.ActionLink(
-                post.Title, "Posts", "Blog",
+                post.Title, "Post", "Blog",
                     new {
-                        year=post.PostOn.Year,
-                        month =post.PostOn.Month,
-                        title = post.UrlSlug
+                        id=post.Id
                     },
                     new
                     {
