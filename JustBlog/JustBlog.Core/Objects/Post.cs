@@ -14,6 +14,7 @@ namespace JustBlog.Core.Objects
         public virtual DateTime Modified { get; set; }
         public virtual DateTime PostOn { get; set; }
         public virtual Category Category { get; set; }
+        public virtual string CategoryName { get; set; }
         public virtual IList<Tag> Tags { get; set; }
     }
 }

@@ -47,6 +47,21 @@ namespace JustBlog.Web.Controllers
             return View("Post",model);
         }
 
+        [HttpGet]
+        public ViewResult Posts()
+        {
+            List<PostModel> model=new List<PostModel>();
+            var posts = _blogRepository.Posts();
+            if (posts != null && posts.Any())
+            {
+                foreach (var item in posts)
+                {
+                    model.Add(Mapping(item));
+                }
+            }
+            return View("Posts", model);
+        }
+
         private  PostModel Mapping(Post post)
         {
              PostModel model=new PostModel()

@@ -5,36 +5,71 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/themes/simple/style.css" type="text/css" rel="stylesheet"/>
-
+    <link href="~/Content/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="~/Content/themes/default.css" type="text/css" rel="stylesheet"/>
+    <link href="~/Content/app.css" type="text/css" rel="stylesheet" />
+    <link href="~/Content/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<div id="main">
-    <!--header-->
-    <div id="header">
-        <div id="logo">
-            <div id="logo_text">
-                <h1><a href="/">Just <span class="logo_colour">Posts</span></a>
-                </h1>
-                <h2>Writing, experiment and more...</h2>
+<div class="wrapper">
+    <div class="header">
+        <div class="topbar">
+            <div class="container">
+                <!-- Topbar Navigation -->
+                <ul class="loginbar pull-right">
+                    <li>
+                        <i class="fa fa-globe"></i>
+                        <a>Languages</a>
+                        <ul class="lenguages">
+                            <li class="active">
+                                <a href="#">English <i class="fa fa-check"></i></a>
+                            </li>
+                            <li><a href="#">Vietnamese</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="topbar-devider"></li>
+                    <li><a href="page_faq.html">Help</a></li>
+                    <li class="topbar-devider"></li>
+                    <li><a href="page_login.html">Login</a></li>
+                </ul>
+                <!-- End Topbar Navigation -->
+            </div>
+        </div>
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <h4>
+                        <a href="#">Just Blog</a>    
+                    </h4>
+                    <h5>Writing, experiment and more...</h5>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Posts", "Posts", "Blog")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
             </div>
         </div>
     </div>
-    <div id="menubar">
-        <ul id="menu">
-            <li>@Html.ActionLink("Posts","Posts","Blog")</li>
-            <li>@Html.ActionLink("Contact","Contact","Home")
-            <li>@Html.ActionLink("About","About","Home")</li>
-        </ul>
-    </div>
-    <!--content-->
-    <div id="site_content">
+    <div class="content">
         @RenderBody()
     </div>
-    <!--footer-->
-    <div id="footer">
-        Copyright
+    <div class="footer">
+
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <p>
+                    2014 &copy; JustBlog. ALL Rights Reserved.
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
+
 </body>
 </html>

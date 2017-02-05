@@ -12,5 +12,7 @@ namespace JustBlog.Core
         IList<Post> Posts(int pageNo,int pageSize);
         int TotalPosts();
         Post Post(int id);
+        IList<Post> Posts();
+        bool CreateUser(User user);
     }
 }
